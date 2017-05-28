@@ -35,7 +35,6 @@ public class Main {
             final boolean noop = res.getBoolean("noop");
             final String outPath = res.getString("output");
             final List<String> targets = res.getList("targets");
-            ///////////////////////////////////
             if (verbose) {
                 System.err.printf("Output path: %s\n", outPath);
             }
@@ -45,8 +44,7 @@ public class Main {
             targets.forEach(op);
         } catch (ArgumentParserException e) {
             parser.handleError(e);
-        } finally {
-            // pass
+            exitCode = 1;
         }
         System.exit(exitCode);
     }
